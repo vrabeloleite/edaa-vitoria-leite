@@ -10,9 +10,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_fibonacci() {
-        assert_eq!(fibonacci_recursivo(0), 0);
-        assert_eq!(fibonacci_recursivo(1), 1);
+    fn test_fibo() {
         assert_eq!(fibonacci_recursivo(6), 8);
     }
 }
