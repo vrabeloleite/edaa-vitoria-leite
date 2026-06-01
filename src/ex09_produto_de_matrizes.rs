@@ -17,10 +17,9 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_produto_matrizes() {
+    fn test_matriz() {
         let a = vec![vec![1, 2], vec![3, 4]];
         let b = vec![vec![2, 0], vec![1, 2]];
-        let resultado = produto_de_matrizes(&a, &b);
-        assert_eq!(resultado, vec![vec![4, 4], vec![10, 8]]);
+        assert_eq!(produto_de_matrizes(&a, &b), vec![vec![4, 4], vec![10, 8]]);
     }
 }
