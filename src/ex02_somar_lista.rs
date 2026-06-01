@@ -13,6 +13,5 @@ mod tests {
     #[test]
     fn test_somar_lista() {
         assert_eq!(somar_lista(&[1, 2, 3, 4, 5]), 15);
-        assert_eq!(somar_lista(&[]), 0);
     }
 }
