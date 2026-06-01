@@ -19,7 +19,7 @@ mod tests {
 
     #[test]
     fn test_pares_com_soma() {
-        let pares = pares_com_soma(&[1, 2, 3, 4], 5);
-        assert_eq!(pares, vec![(1, 4), (2, 3)]);
+        let p = pares_com_soma(&[1, 2, 3, 4], 5);
+        assert_eq!(p, vec![(1, 4), (2, 3)]);
     }
 }
