@@ -1,4 +1,3 @@
-/// Ordena um slice mutável utilizando o algoritmo Bubble Sort.
 pub fn ordenacao_bolha(lista: &mut [i32]) {
     let n = lista.len();
     for i in 0..n {
@@ -15,9 +14,9 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_ordenacao_bolha() {
-        let mut vetor = [5, 3, 4, 1, 2];
-        ordenacao_bolha(&mut vetor);
-        assert_eq!(vetor, [1, 2, 3, 4, 5]);
+    fn test_bubble() {
+        let mut v = [5, 2, 4, 1];
+        ordenacao_bolha(&mut v);
+        assert_eq!(v, [1, 2, 4, 5]);
     }
 }
