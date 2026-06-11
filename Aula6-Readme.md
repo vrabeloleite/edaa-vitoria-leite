@@ -1,6 +1,6 @@
 ## Aula 06: TADs Lineares (Exercícios Teóricos)
 
-### [cite_start]Exercício 17: Comparação de Desempenho (10.000 Elementos) [cite: 35]
+### Exercício 17: Comparação de Desempenho (10.000 Elementos) [cite: 35]
 * **Vec (Abordagem Ingênua):** Operações como `pop_front` (simuladas por remoções no índice inicial) possuem complexidade de tempo **O(n)**. Isso ocorre devido ao deslocamento físico na memória de todos os elementos subsequentes a cada remoção, tornando a estrutura extremamente ineficiente para grandes volumes de dados.
 * **VecDeque (Fila Padrão do Rust):** Utiliza um buffer circular que gerencia ponteiros lógicos de início e fim. Isso garante inserções e remoções estáveis em tempo **O(1)**.
 * **FilaCircular (Customizada):** Implementada estaticamente com tamanho fixo, mantendo a performance de tempo estável em **O(1)** sem realocações de memória ou deslocamentos físicos de dados.
