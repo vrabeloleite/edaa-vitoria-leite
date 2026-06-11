@@ -1,13 +1,13 @@
-## Aula 06: TADs Lineares (Exercícios Teóricos)
+## Exercícios de Análise Teórica — Aula 06 (TADs Lineares)
 
-### Exercício 17: Comparação de Desempenho (10.000 Elementos) [cite: 35]
-* **Vec (Abordagem Ingênua):** Operações como `pop_front` (simuladas por remoções no índice inicial) possuem complexidade de tempo **O(n)**. Isso ocorre devido ao deslocamento físico na memória de todos os elementos subsequentes a cada remoção, tornando a estrutura extremamente ineficiente para grandes volumes de dados.
-* **VecDeque (Fila Padrão do Rust):** Utiliza um buffer circular que gerencia ponteiros lógicos de início e fim. Isso garante inserções e remoções estáveis em tempo **O(1)**.
-* **FilaCircular (Customizada):** Implementada estaticamente com tamanho fixo, mantendo a performance de tempo estável em **O(1)** sem realocações de memória ou deslocamentos físicos de dados.
+### Exercício 17: Relatório de Desempenho (Cenário de 10.000 Elementos)
+* **Fila Baseada em Vec (Ingênua):** Apresentou o pior desempenho prático com complexidade **O(n)** nas operações de remoção frontal (`pop_front` emulado). Isso acontece porque remover o índice zero obriga o sistema operacional a deslocar em bloco todas as posições seguintes de memória.
+* **VecDeque (Standard Library):** Desempenho linear estável em **O(1)**. O array circular lógico desloca apenas ponteiros aritméticos de início e término, eliminando movimentação física de bytes.
+* **FilaCircular (Customizada):** Teve desempenho idêntico ao `VecDeque` com custo **O(1)**, demonstrando que buffers fixos pré-alocados isolam a aplicação de sofrer com alocações dinâmicas custosas em tempo de execução.
 
-### Exercício 18: Quando usar qual TAD? (Justificativas) [cite_start][cite: 37]
-* **(a) Botão "Ctrl+Z" de um editor:** **Pilha (Stack)**. [cite_start]Necessita da política LIFO (Last-In, First-Out), de modo que a última alteração efetuada pelo usuário seja sempre a primeira a ser desfeita[cite: 38].
-* **(b) Processar pedidos de um restaurante em ordem:** **Fila (Queue)**. [cite_start]Necessita da política FIFO (First-In, First-Out) para garantir um atendimento justo e sequencial por ordem de chegada[cite: 39].
-* **(c) Verificar se um arquivo HTML tem tags bem formadas:** **Pilha (Stack)**. À medida que o algoritmo faz o parse e encontra uma tag de abertura (ex: `<div>`), ela é empilhada. [cite_start]Ao encontrar uma de fechamento (`</div>`), ela obrigatoriamente precisa validar o casamento com o topo corrente da pilha[cite: 40].
-* **(d) Navegar nos arquivos de um diretório em largura:** **Fila (Queue)**. [cite_start]O algoritmo de Busca em Largura (BFS) exige que todos os nós/arquivos de um mesmo nível de profundidade sejam guardados e processados ordenadamente antes de descer para o próximo nível[cite: 41].
-* **(e) Verificar se uma sequência de palavras é palíndromo:** **Deque (Double-Ended Queue)**. [cite_start]Permite a remoção e comparação paralela das extremidades (início e fim) em tempo O(1), mantendo o fluxo limpo e eficiente[cite: 42].
+### Exercício 18: Critério de Escolha de Estruturas de Dados
+* **(a) Comando "Ctrl+Z":** **Pilha (Stack)**. Estrutura regida estritamente por LIFO (Last-In, First-Out). O último estado do documento precisa obrigatoriamente ser o primeiro a ser desempilhado e revertido.
+* **(b) Despacho de Pedidos:** **Fila (Queue)**. Uso obrigatório de comportamento FIFO (First-In, First-Out) para garantir a integridade e cronologia do atendimento por prioridade de chegada.
+* **(c) Validador de Tags HTML:** **Pilha (Stack)**. Essencial para analisar o aninhamento e o escopo da marcação. Tags de abertura entram na pilha, e tags de fechamento validam a integridade comparando-se diretamente com o elemento presente no topo atual.
+* **(d) Busca em Largura (BFS):** **Fila (Queue)**. Garante que os vértices de uma subárvore ou diretório sejam exauridos em nível de profundidade atual de forma ordenada antes que o algoritmo explore novos níveis hierárquicos abaixo.
+* **(e) Análise de Palíndromo:** **Deque (Double-Ended Queue)**. Permite a checagem paralela e simétrica comparando simultaneamente os caracteres posicionados nas duas pontas opostas da string com custo de tempo O(1).
