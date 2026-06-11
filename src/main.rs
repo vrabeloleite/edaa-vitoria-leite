@@ -8,6 +8,7 @@ pub mod ex07_fibonacci_recursivo;
 pub mod ex08_ordenacao_bolha;
 pub mod ex09_produto_de_matrizes;
 pub mod ex10_merge_sort;
+mod aula06;
 
 fn main() {
     println!("--- TRABALHO DE EDAA - ALGORITMOS EM RUST ---");
