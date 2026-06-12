@@ -417,12 +417,34 @@ pub fn simulador_round_robin(mut processos: VecDeque<Processo>, quantum: u32) {
 }
 
 // =========================================================================
+// FUNÇÃO PRINCIPAL (MAIN)
+// =========================================================================
+fn main() {
+    println!("=== AULA 06 - TADS LINEARES ===");
+    println!("Rodando demonstração dos exercícios...\n");
+    testar_atividades_aula06();
+}
+
+// =========================================================================
 // RUNNER INTERNO PARA CHAMADA MANUAL VIA MAIN
 // =========================================================================
 pub fn testar_atividades_aula06() {
     println!("\n>>> RUNNER: EXECUTANDO AULA 06 MOCADO <<<");
-    assert_eq!(inverter_vetor(vec![1, 2, 3]), vec![3, 2, 1]);
-    assert_eq!(avaliar_rpn("3 4 + 2 *"), 14.0);
+    
+    // Teste grupo 1
+    let invertido = inverter_vetor(vec![1, 2, 3]);
+    println!("Inversão de [1,2,3]: {:?}", invertido);
+    assert_eq!(invertido, vec![3, 2, 1]);
+    
+    // Teste grupo 2
+    let rpn = avaliar_rpn("3 4 + 2 *");
+    println!("RPN 3 4 + 2 * = {}", rpn);
+    assert_eq!(rpn, 14.0);
+    
+    // Teste grupo 4
+    let palindromo = eh_palindromo("A man a plan a canal Panama");
+    println!("É palíndromo? {}", palindromo);
+    
     println!(">>> TODOS OS PRINTS EXECUTADOS SEM ERROS NO TERMINAL <<<\n");
 }
 
