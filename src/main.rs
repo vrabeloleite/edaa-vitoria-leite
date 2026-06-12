@@ -521,3 +521,6 @@ mod tests {
         simulador_round_robin(processos, 2);
     }
 }
+fn main() {
+    println!("=== AULA 06 ===");
+}
