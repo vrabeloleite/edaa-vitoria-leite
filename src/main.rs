@@ -505,7 +505,7 @@ mod tests {
 
     #[test]
     fn test_extra_palindromo() {
-        // Teste extra que tinha esquecido
+        // Teste extra que tinha esquecido.
         assert!(eh_palindromo("ovo"));
         assert!(!eh_palindromo("rust"));
     }
